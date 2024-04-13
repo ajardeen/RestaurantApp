@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  #loginpage{
+     z-index:20;
+  }
+  body{
+      background:url('img/vintage-old-rustic-cutlery-dark.jpg');
+      background-size:cover;
+      color:white;
+    }
+    .nav{
+    background-color:#9db1ca66;
+    position:sticky;
+    top:10px;
+    z-index:10;
+    }
+    .carousel-item img {
+        height: 800px;
+        border-radius:20px;
+      }
+      .message {
+        position: absolute;
+        top: 100px;
+        left: 10px;
+      }
+      .message p,
+      h2 {
+        font-size: 50px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 40px;
+      }
+      .message p {
+        font-size: 30px;
+      }
+      .message h2 {
+        letter-spacing: 10px;
+      }
+      #list-example {
+        width: 200px;
+        position: sticky;
+        top: 200px;
+      }
+      .box{
+        height: 200px;
+      }
+      .myslider{
+          padding:10px 50px;
+      }
+       .checked {
+  color: orange;
+}
+    .review-card{
+      box-shadow: -1px 2px 5px 0px;
+      padding: 30px;
+      width: 30vw;
+      border-radius: 10px;
+    }
+    .review-container{
+      display: flex;
+   flex-wrap: wrap;
+    }
+    #rating-title{
+      color:yellow;
+      margin:10px;
+    }
+    .bottom{
+      display:flex;
+      gap:30px;
+     justify-content: space-evenly;
+      padding:17px;
+      margin:20px 10px 10px 0px;
+      background-color: #9db1ca66;
+      border-top-left-radius:10px;
+      border-top-right-radius:10px;
+    }
+    .about{
+     width:600px;
+    }
+  </style>
+  
+  </head>
+
+  <body>
+ <div class="nav">
+      <div class="leftnav">
+        <a href="#"><img src="img/restaurant_menu_black_24dp.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"> Restaurant</a>
+      </div>
+      <div class="rightnav">
+        <a href="#" onclick="loginpage()"
+          >LOGIN<span class="material-symbols-outlined">login</span></a>
+      </div>
+</div>
+ <!--   scroll section-->
+ <div
+      id="carouselExampleIndicators"
+      class="carousel slide myslider"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/img7.jpg" class="d-block w-100" alt="img1" />
+          <div class="carousel-caption d-none d-md-block message">
+            <h2>Welcome</h2>
+            <p>"We give you an eating experience that you'll never forget"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/img8.jpg" class="d-block w-100" alt="img2" />
+          <div class="carousel-caption d-none d-md-block message">
+            <h2>Are you Starving</h2>
+            <p>Pick want you like</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/img9.jpg" class="d-block w-100" alt="img3" />
+          <div class="carousel-caption d-none d-md-block message">
+            <h2>The chicken is on your Table</h2>
+            <p>order it now!</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+<!--     Reviews -->
+    
+    <section>
+      <h3 id="rating-title">Reviews</h3>
+    <div class="container-fluid mt-5 review-container">
+        
+
+
+    <div class="container review-card">
+    <h5>Prabhakaran</h5>
+    <div class="star">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <p>Misal Pav: Spicy Maharashtrian curry with sprouted lentils, served with soft bread rolls.</p>
+    </div>
+
+    <div class="container review-card">
+      <h5>Adithan</h5>
+      <div class="star">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <p>Biryani: Fragrant rice layered with meat or veggies, a flavor explosion from different regions.</p>
+      </div>
+
+      <div class="container review-card">
+        <h5>Jeyasilan</h5>
+        <div class="star">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <p>Chaat: Indian street food—salty, spicy, sweet, and sour bites. Explore the chaat scene! 🌶️🍛🇮🇳</p>
+        </div>
+  </section>
+    
+    <section>
+    <div class="container-fluid bottom">
+    <div class="about">
+    <h4>About</h4>
+    <p>
+**Welcome to My Indian Restaurant!**
+Discover the heart of Delhi's flavors at My Delhi. Our chefs blend tradition and culture, serving mouthwatering dishes like Butter Chicken, Daal Makhani, and zesty Chaats. Join us on this gastronomic adventure! 🌶️🍛🇮🇳
+</p>
+    </div>
+    
+    <div class='contact'>
+    <h4>Contact</h4>
+    <h4>Ph:1234567890</h4>
+    <h4>Address:..........<br>
+    ......................<br>
+    ......................</h4>
+    </div>
+    
+    </div>
+     
+    </section>
+    
+    
+    
+    <!-- login tab -->
+    <div id="loginpage">
+      <a href="#" onclick="closeloginpage()"><span class="material-symbols-outlined">close </span></a>
+      <form id="form1" method="post" action="login">
+        <label>UserName</label>
+        <input id="username" type="text" name="username" /><br />
+        <label>Password</label>
+        <input id="password" type="password" name="password"/>
+        <button id="login_btn" type="submit">Login</button>
+      </form>
+    </div>
+    
+    
+    
+    
+    
+    
+    <script  th:src="@{/js/script.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

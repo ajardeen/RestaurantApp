@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Product Details</title>
+
+<style>
+	
+		.table{
+			padding: 50px;
+		}
+		body{
+      background:url('img/woodbg.jpg');
+      background-size:cover;
+      color:black;
+
+    }
+    #Product{
+     display:flex;
+      align-items: center;
+       justify-content: center;
+    }
+
+</style>
+</head>
+<body>
+ <div id="Product">
+			<form method="post" action="/productmanagement">
+				<h2>Product </h2>
+				<label>Id</label>
+				<input name="product_id" type="text" th:value="${product.getProduct_id}">
+				<label>Name</label>
+				<input name="product_name" type="text" th:value="${product.getProduct_name}">
+				<label>Rate</label>
+				<input name="product_rate" type="number" th:value="${product.getProduct_rate}">
+				<label>Description</label>
+				<input type="text" name="product_desc" th:value="${product.getProduct_desc}">
+                <button type="submit">Update</button>
+				<button type="reset">CLEAR</button>
+			</form>
+		</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 5px;
+    height: 10vh;
+    
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.leftnav a,.rightnav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #A0153E;
+    display: flex;
+}
+#loginpage a{
+    position: fixed;
+    display: flex;
+    right: 10px;
+    font-size:larger;
+    float: right;
+    margin: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#loginpage{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 1);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index:20;
+}
+#form1{
+    background-color: white;
+    border: 1px solid rgb(2, 2, 2,0.5);
+    border-radius: 10px;
+    width: 300px;
+    height: 50vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+   color: black;
+   position: fixed;
+   top: 30px;
+}
+
+#username,#password{
+    height: 25px;
+    border-radius: 5px;
+}
+#username:focus,#password:focus{
+    box-shadow: 5px 0px 20px;   
+    -webkit-text-fill-color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.5);
+}
+#login_btn{
+    margin-top: 30px;
+    padding: 10px;
+}

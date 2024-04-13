@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="order_style.css" th:href="@{/css/order_style.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<style>
+  
+</style>
+<body>
+
+<nav class="navbar navbar-light ">
+     <h2 class="title table-no">Table no:<span th:text=${tableno}></span></h2>
+    <span class="material-symbols-outlined " id="cart-icon">
+      shopping_cart
+      </span>
+      <p id="date"></p>
+  </nav>
+
+
+    <div class="container">
+     
+      <div class="shop-content">
+
+        <div class="food-box " th:each=obj:${products}>
+        <h3 class="food-id " th:text="${obj.getProduct_id}"></h3>
+          <h3 class="food-title " th:text="${obj.getProduct_name}"></h3>
+          <span class="food-price " th:text="${'Rs.'}+${obj.getProduct_rate}"></span>
+          <p class="food-desc " th:text="${obj.getProduct_desc}"></p>
+          <button class="add-cart btn btn-primary">ADD</button>
+        </div>
+      </div>
+     </div>
+  
+
+  <!-- table order right tab -->
+  <div class="cart">
+  <button id="cart-close">X</button>
+    <div class="cart-title">Cart List</div>
+    
+    <div class="cart-content">
+   <!-- all product added here below lines dont remove comment line its only for reference -->
+  <!-- <div class="cart-box">
+    <hr>
+    <div class="detail-box">
+    <div class="product-id">${id}</div>
+     <div class="product-title">${title}</div>
+     <div class="price-box">
+         <div class="cart-price">${price}</div>
+         <span class="Amount">Amount</span>
+         <div class="cart-amt">${price}</div>
+     </div>
+     <input type="number" value="1" class="cart-quantity">
+    </div>
+
+    <span class="material-symbols-outlined cart-remove" >delete</span>
+    </div>-->
+  </div>
+   <hr>
+  <div class="total">
+    <div class="total-title">Total:</div>
+    <div class="total-price">Rs.0</div>
+  </div>
+  <button class="btn-buy btn btn-warning" id="place-order">Place order</button>
+</div>
+
+ <!--billing page starting-->
+<div class="billing container m-5 p-5">
+    <h1>Billing</h1>
+    <button class="btn btn-danger billcancel">Cancel</button>
+    <div class="tableno">Table no 1</div>
+   
+    <table class="table table-bordered">
+        <thead>
+    <tr class="table-dark">
+        <th>ID.NO</th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>QTY</th>
+        <th>AMOUNT</th>
+    </tr>
+    </thead>
+    <tbody id='billingtbody' class='table-light'>
+    <!-- <tr>
+        <td>1</td>
+        <td>Chicken</td>
+        <td>120</td>
+        <td>2</td>
+        <td>240</td>
+    </tr> -->
+    
+    </tbody>
+    <tfoot>
+    <tr class="table-danger">
+        <td colspan="4">Total</td>
+        <td  class='bill-total' colspan="1" style="text-align: center;"></td>
+    </tr>
+    </tfoot>
+    </table>
+    <button class="btn btn-success pay">Pay</button>
+   </div>
+
+
+
+</body>
+<script>
+ 
+</script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script th:src="@{/js/order_script.js}"></script>
+</html>
