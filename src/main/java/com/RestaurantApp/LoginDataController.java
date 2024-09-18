@@ -6,7 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 
 @Controller
@@ -23,10 +29,11 @@ public class LoginDataController {
 	
 	@GetMapping("/")
 	public String index() {
+		
 		return "index";
 	}
    
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public String adminPage(@RequestParam("username") String name,@RequestParam("password") int pass,Model m) {
 	    String login_name;
 	    int login_pass;
@@ -67,7 +74,6 @@ public class LoginDataController {
 	public String staffdetails() {
 		return"adminpage";
 	}
-
 	@PostMapping("/staffdetails")
 	public String staffDetails(
 			@RequestParam("Sid") int Sid,
@@ -107,14 +113,14 @@ public class LoginDataController {
 	}
 	
 	// adminpage edit and delete option
-	@DeleteMapping("/delete/{id}")
+	@GetMapping("/delete/{id}")
 	public String deletestaff(@PathVariable(name="id") int  id) {
 		 loginser.delete(id); 
 		System.out.println("deleted"+id+"id Staff");
 		return"redirect:/staffdetails";
 	}
 	// sending data to edit staff page
-	@PutMapping("/edit/{id}")
+	@GetMapping("/edit/{id}")
 	public String editstaff(@PathVariable(name="id") int id,Model m) {
 		LoginData l=loginser.findid(id);
 		m.addAttribute("staff", l);
@@ -124,14 +130,14 @@ public class LoginDataController {
 	
 	// productmanagement page edit and delete
 	// delete
-	@DeleteMapping("/deleteproduct/{product_id}")
+	@GetMapping("/deleteproduct/{product_id}")
 	public String deleteproduct(@PathVariable(name="product_id") int id) {
 		pservice.pdelete(id);
 		return"redirect:/productmanagement";
 	}
 	
 	//edit
-	@PutMapping("/editproduct/{product_id}")
+	@GetMapping("/editproduct/{product_id}")
 	public String editproduct(@PathVariable(name="product_id") int id,Model m) {
 		Products p=pservice.pfindid(id);
 		m.addAttribute("product", p);
