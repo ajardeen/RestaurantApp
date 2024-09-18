@@ -1,0 +1,1 @@
+insert into logindata (sno,address,contact_number,designation,doj,name,password,username) values(1,'chennai',9998999,'admin','2012-08-12','azar',12345,'admin');
